@@ -127,9 +127,10 @@ final class BaseNFCManager: NSObject, NFCManager {
 //                    guard let password = self.password else {
 //                        return Fail(error: NFCManagerError.missingUnlockParameters).eraseToAnyPublisher()
 //                    }
-//                    guard sensorType.isWritable else {
-//                        return Fail(error: NFCManagerError.unsupportedSensorType).eraseToAnyPublisher()
-//                    }
+                    guard sensorType.isWritable else {
+                        return Fail(error: NFCManagerError.unsupportedSensorType).eraseToAnyPublisher()
+                    }
+                    print(sensorType)
 
                     return tag.activate(sensorType: sensorType, password: Data([0xc2, 0xad, 0x75, 0x21]))
                         .map { (sensorType, Data(), patchInfo) }
