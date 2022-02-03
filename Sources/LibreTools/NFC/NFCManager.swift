@@ -56,12 +56,12 @@ final class BaseNFCManager: NSObject, NFCManager {
     }
 
     func setCredentials(unlockCode: Int, password: Data) {
-        self.unlockCode = 0xa1
+        self.unlockCode = 0xa0
         self.password = password
     }
 
     init(unlockCode: Int? = nil, password: Data? = nil) {
-        self.unlockCode = 0xa1
+        self.unlockCode = 0xa0
         self.password = password
     }
 
